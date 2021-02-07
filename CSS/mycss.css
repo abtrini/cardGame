@@ -1,0 +1,122 @@
+body {
+  padding: 0px;
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: blanchedalmond;
+  position: grid;
+  grid-template-columns: 2fr ifr;
+}
+
+.heading {
+  font-size: 105px;
+  padding: 5px;
+  position: relative;
+  top: 20px;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.heading.text {
+  font-size: 35px;
+  position: relative;
+  color: darkred;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.heading.score {
+  font-size: 35px;
+  position: relative;
+  color:darkblue;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.gameOneBoard,
+.gameTwoBoard,
+.gameThreeBoard {
+  max-width: 800px;
+  max-height: 100vh;
+  display: grid; /*display may be flex*/
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  perspective: 900px;
+  grid-row-gap: 5px;
+  grid-column-gap: 15px;
+  margin: auto;
+}
+.cardWrapper {
+  display: block; /*display may be flex*/
+  height: 200px;
+  width: 100%;
+  margin: 15px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 0.9s;
+}
+
+.cardWrapper.turn {
+  /*class added to cardWrapper onCLick*/
+  transform: rotateY(180deg);
+}
+.cardBackBrown,
+.cardBackOrange,
+.cardBackGreen,
+.cardFront,
+.cardBackBlue {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: 5%;
+  text-align: center;
+  backface-visibility: hidden;
+}
+
+.cardFront {
+  background-color: rgb(206, 7, 7);
+  color: yellow;
+  text-align: center;
+  font-weight: bolder;
+  font: 2em sans-serif;
+}
+
+.cardBackOrange {
+  background-color: orange;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.cardBackGreen {
+  background-color: green;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.cardBackBrown {
+  background-color: brown;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.cardBackBlue {
+  background-color: blue;
+  color: white;
+  transform: rotateY(180deg);
+}
+.btn-ctn {
+  margin: auto;
+  text-align: center;
+  padding: 35px;
+}
+
+.btn {
+  height: 45px;
+  width: 175px;
+  background-color: darkblue;
+  border-top-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  color: white;
+  margin: 6px;
+  font-size: larger;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  transform: scale(1);
+}
+.btn:active {
+  transform: scale(0.95);
+  transition: 0.1s;
+}
